@@ -28,6 +28,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # setting your logger to standard out, both of which are required to run a Rails 4 application on a twelve-factor provider.
 gem 'rails_12factor', group: :production
 
+# HOME: https://github.com/plataformatec/devise
+# Flexible authentication solution for Rails with Warden
+gem 'devise'
+
+# HOME: http://github.com/michaeldv/awesome_print
+# Pretty print your Ruby objects with style -- in full color and with proper indentation
+gem 'awesome_print'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
