@@ -45,6 +45,9 @@ gem 'sidekiq', '~> 3.1.3'
 # Supports Resque, Sidekiq, Delayed::Job and QueueClassic.
 gem 'devise-async'
 
+# Puma web server
+gem 'puma'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
