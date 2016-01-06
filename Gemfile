@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '1.9.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
 # Use postgresql as the database for Active Record
@@ -35,6 +35,16 @@ gem 'devise'
 # HOME: http://github.com/michaeldv/awesome_print
 # Pretty print your Ruby objects with style -- in full color and with proper indentation
 gem 'awesome_print'
+
+# HOME: https://github.com/mperham/sidekiq
+# Simple, efficient background processing for Ruby
+gem 'sidekiq', '~> 3.1.3'
+
+# HOME: https://github.com/mhfs/devise-async
+# Send Devise's emails in background. 
+# Supports Resque, Sidekiq, Delayed::Job and QueueClassic.
+gem 'devise-async'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
