@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
 # Use postgresql as the database for Active Record
@@ -48,6 +48,17 @@ gem 'devise-async'
 # Puma web server
 gem 'puma'
 
+
+# HOME: https://github.com/twbs/bootstrap-sass
+# Official Sass port of Bootstrap 2 and 3. 
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'foreman'
+
+# Home: https://github.com/plataformatec/simple_form
+# Forms made easy for Rails! 
+# It's tied to a simple DSL, with no opinion on markup.
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
