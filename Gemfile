@@ -1,6 +1,16 @@
+
+# HOME: https://github.com/bkeepers/dotenv
+# Loads environment variables from `.env`.
+# dotenv is initialized in your Rails app 
+# during the before_configuration callback, 
+# which is fired when the Application constant is defined 
+# in config/application.rb with 
+# class Application < Rails::Application.
+# gem 'dotenv-rails', :require => 'dotenv/rails-now', :groups => [:development, :test]
+
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
 # Use postgresql as the database for Active Record
@@ -38,7 +48,7 @@ gem 'awesome_print'
 
 # HOME: https://github.com/mperham/sidekiq
 # Simple, efficient background processing for Ruby
-gem 'sidekiq', '~> 3.1.3'
+gem 'sidekiq' #, '~> 3.1.3'
 
 # HOME: https://github.com/mhfs/devise-async
 # Send Devise's emails in background. 
@@ -51,7 +61,7 @@ gem 'puma'
 
 # HOME: https://github.com/twbs/bootstrap-sass
 # Official Sass port of Bootstrap 2 and 3. 
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass' #, '~> 3.3.6'
 
 gem 'foreman'
 
@@ -59,6 +69,14 @@ gem 'foreman'
 # Forms made easy for Rails! 
 # It's tied to a simple DSL, with no opinion on markup.
 gem 'simple_form'
+
+
+# Home: https://github.com/stripe/stripe-ruby
+# The Stripe Ruby bindings provide a small SDK 
+# for convenient access to the Stripe API 
+# from applications written in the 
+# Ruby language.
+gem 'stripe'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -71,10 +89,14 @@ gem 'simple_form'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
-  gem 'debugger'
+  # gem 'debugger'
+  #
+  # HOME: https://github.com/deivid-rodriguez/byebug
+  # Replacing debugger due to incompatibility with ruby 2.x
+  gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console' #, '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

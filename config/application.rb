@@ -6,6 +6,17 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Assign Env variables
+# this part need to make more secured later
+# start
+# ENV['GMAIL_USERNAME'] = "zakaria.cuet@gmail.com"
+# ENV['GMAIL_PASSWORD'] = "trapezium"
+# ENV['STRIPE_PUBLISHABLE_KEY'] = "pk_test_nOauY8BJQKuxqsWcWGvXlv7v"
+# ENV['STRIPE_SECRET_KEY'] = "sk_test_UBinZFX7yvJIXqJrxc9AGqmd"
+
+# End
+
+
 module MtSaas
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
