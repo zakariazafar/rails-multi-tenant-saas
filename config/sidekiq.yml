@@ -1,6 +1,6 @@
 # Configuration for Sidekiq
 
-:concurrency: 5
-:queues:
-- [mailer, 5]
-- [default, 5]
+# :concurrency: 5
+# :queues:
+# - [mailer, 5]
+# - [default, 5]
