@@ -83,6 +83,13 @@ gem 'stripe'
 
 gem 'stripe_event'
 
+#  Database multi-tenancy for Rack (and Rails) applications
+#  HOME: https://github.com/influitive/apartment
+gem 'apartment'
+
+# HOME: https://github.com/influitive/apartment-sidekiq
+# Sidekiq support for the Apartment Gem
+gem 'apartment-sidekiq'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
