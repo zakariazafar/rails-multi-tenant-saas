@@ -90,6 +90,10 @@ gem 'apartment'
 # HOME: https://github.com/influitive/apartment-sidekiq
 # Sidekiq support for the Apartment Gem
 gem 'apartment-sidekiq'
+
+# HOME: https://github.com/scambra/devise_invitable
+# An invitation strategy for devise 
+gem 'devise_invitable'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -115,5 +119,9 @@ group :development, :test do
 
   # Ultrahook
   gem 'ultrahook'
+
+  # HOME: https://github.com/ryanb/letter_opener
+  # Preview mail in the browser instead of sending.
+  gem "letter_opener"
 end
 
