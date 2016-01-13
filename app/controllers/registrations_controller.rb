@@ -1,5 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
-	protected
+	  
+      def new
+      	if request.subdomain.blank? || request.subdomain == "www"
+      		super
+      	else
+      		flash[:notice] = "Access Restricted"
+      		redirect_to :root
+      	end
+      end
+	  protected
 
 	  def after_sign_up_path_for(resource)
 	    #'/an/example/path' # Or :prefix_to_your_route

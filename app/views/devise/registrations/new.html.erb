@@ -15,4 +15,6 @@
   </div>
 <% end %>
 
+<% unless request.subdomain.blank? || request.subdomain == "www" %>
 <%= render "devise/shared/links" %>
+<% end %>

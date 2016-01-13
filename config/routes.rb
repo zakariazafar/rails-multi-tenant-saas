@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Devise routes with custom controller
-  devise_for :users, controllers: { registrations: "registrations" }
+  devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
   resources :weather_grid
   get "/subscriptions/cancel_subscription"   => "subscriptions#cancel_subscription"
   get "/subscriptions/update_card"   => "subscriptions#update_card"

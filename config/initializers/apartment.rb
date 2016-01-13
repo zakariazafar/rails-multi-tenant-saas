@@ -5,7 +5,7 @@
 # require 'apartment/elevators/generic'
 # require 'apartment/elevators/domain'
 require 'apartment/elevators/subdomain'
-
+require 'rescue_apartment_middleware'
 #
 # Apartment Configuration
 #
@@ -65,3 +65,4 @@ end
 
 # Rails.application.config.middleware.use 'Apartment::Elevators::Domain'
 Rails.application.config.middleware.use 'Apartment::Elevators::Subdomain'
+Apartment::Elevators::Subdomain.prepend RescueApartmentMiddleware
