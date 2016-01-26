@@ -78,5 +78,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Configuration for devise
-  config.action_mailer.default_url_options = { :host=> 'ga4you.info' }
+  config.action_mailer.default_url_options = { :host=> 'nexgenaus.com' }
 end
