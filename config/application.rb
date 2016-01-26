@@ -33,5 +33,16 @@ module MtSaas
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.assets.paths << Rails.root.join("assets","libs")
+    config.assets.paths << Rails.root.join("assets","images")
+    
+    
+    
+    #config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff|otf)$)
+    config.assets.precompile << Proc.new { |path|
+      if path =~ /\.(eot|svg|ttf|woff|otf)\z/
+        true
+      end
+    }
   end
 end

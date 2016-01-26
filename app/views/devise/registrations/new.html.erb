@@ -1,20 +1,52 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-    <%= f.input :subdomain, required: true %>
-  </div>
+<!-- Begin page -->
+<div class="container">
+    <div class="full-content-center animated fadeInDownBig">
+        <p class="text-center"><a href="/"><img src="/app_assets/img/login-logo.png" alt="Logo"></a></p>
+        <div class="login-wrap">
+            <div class="login-block">
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= f.error_notification %>
+                    <div class="form-group login-input">
+                    <i class="fa fa-envelope overlay"></i>
+                    <%= f.input :email, required: true, autofocus: true,label: false, input_html: {class: "form-control text-input"},placeholder: "E-mail" %>
+                    
+                    </div>
+                    <div class="form-group login-input">
+                    <i class="fa fa-user overlay"></i>
+                    <%= f.input :subdomain, required: true,label: false, input_html: {class: "form-control text-input"},placeholder: "Subdomain" %>
+                   
+                    </div>
+                    <div class="form-group login-input">
+                    <i class="fa fa-key overlay"></i>
+                    <%= f.input :password, required: true, input_html: {class: "form-control text-input"}, placeholder: "********",label: false,hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                    
+                    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+                    <div class="form-group login-input">
+                    <i class="fa fa-key overlay"></i>
+                    <%= f.input :password_confirmation, required: true, input_html: {class: "form-control text-input"}, placeholder: "********",label: false,hint: "Confirm Password" %>
+                    
+                    </div>
 
-<% unless request.subdomain.blank? || request.subdomain == "www" %>
-<%= render "devise/shared/links" %>
-<% end %>
+
+
+                    <div class="checkbox"><label><input type="checkbox" class="form-control"> I accept <strong><a href='#'>Terms and Conditions</a></strong></label></div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                        <%= f.button :submit, "Register", {class: "btn btn-default btn-block"} %>
+                        
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+
+            <% unless request.subdomain.blank? || request.subdomain == "www" %>
+            <%= render "devise/shared/links" %>
+            <% end %>
+
+        </div>
+        
+    </div>
+</div>
