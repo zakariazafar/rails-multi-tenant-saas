@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get "/subscriptions/update_card"   => "subscriptions#update_card"
   post "/subscriptions/update_card_details"   => "subscriptions#update_card_details"
   resources :subscriptions
-
+  get '/index' => 'home#index', as: :home
+  get '/about_us' => 'home#aboutus', as: :about_us
+  get '/services' => 'home#services', as: :services
+  get '/portfolio' => 'home#portfolio', as: :portfolio
+  get '/contact' => 'home#contact', as: :contact
   root to: 'home#index'
 
   mount StripeEvent::Engine, at: '/stripe-event' # provide a custom path

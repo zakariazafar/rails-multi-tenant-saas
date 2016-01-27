@@ -1,53 +1,61 @@
-.pace{
-	-webkit-pointer-events:none;
-	pointer-events:none;
-	-webkit-user-select:none;
-	-moz-user-select:none;
-	user-select:none;
-	z-index:2000;
-	position:fixed;
-	height:6rem;
-	width:6rem;
-	margin:auto;
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-.pace .pace-activity{
-	display:block;
-	position:fixed;
-	z-index:2000;
-	width:30px;
-	height:30px;
-	border:2px solid transparent;
-	border-top-color:#68c39f;
-	border-left-color:#68c39f;
-	border-radius:30px;
-	-webkit-animation:pace-spinner 400ms linear infinite;
-	-moz-animation:pace-spinner 400ms linear infinite;
-	-ms-animation:pace-spinner 400ms linear infinite;
-	-o-animation:pace-spinner 400ms linear infinite;
-	animation:pace-spinner 400ms linear infinite;
-}
-.pace .pace-progress:after {
-	display: block;
-	position: fixed;
-	top: 0;
-	right: .5rem;
-	content: attr(data-progress-text);
-	font-family: "Helvetica Neue", sans-serif;
-	font-weight: 100;
-	font-size: 100px;
-	line-height: 1;
-	z-index: 2001;
-	text-align: right;
-	color: rgba(0, 0, 0, 0.2);
+.pace-inactive {
+  display: none;
 }
 
-.pace.pace-inactive .pace-activity,.pace.pace-inactive .pace-progress{
-	display:none;
+.pace .pace-progress {
+  background: #68C39F;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  height: 2px;
+
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s;
+}
+
+.pace .pace-progress-inner {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #68C39F, 0 0 5px #68C39F;
+  opacity: 1.0;
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -moz-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  -o-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+.pace .pace-activity {
+  display: block;
+  position: fixed;
+  z-index: 2000;
+  top: 15px;
+  left: 15px;
+  width: 14px;
+  height: 14px;
+  border: solid 2px transparent;
+  border-top-color: #68C39F;
+  border-left-color: #68C39F;
+  border-radius: 10px;
+  -webkit-animation: pace-spinner 400ms linear infinite;
+  -moz-animation: pace-spinner 400ms linear infinite;
+  -ms-animation: pace-spinner 400ms linear infinite;
+  -o-animation: pace-spinner 400ms linear infinite;
+  animation: pace-spinner 400ms linear infinite;
 }
 
 @-webkit-keyframes pace-spinner {

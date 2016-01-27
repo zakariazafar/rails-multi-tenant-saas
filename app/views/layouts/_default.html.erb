@@ -1,0 +1,68 @@
+<body class=""><div id="wrapper">    <header>
+        <div id="topbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-xs-6">
+      <span class="hidden-sm hidden-xs"><i class="icon-location4"></i>1375 RICHMOND AVE. MN </span><span class="vertical-space"></span> <i class="icon-phone4"></i>1-800-666-666
+      </div>
+      <div class="col-sm-6 col-xs-6 text-right">
+        <div class="btn-group social-links hidden-sm hidden-xs">  
+          <a href="javascript:;" class="btn btn-link"><i class="icon-facebook4"></i></a>
+          <a href="javascript:;" class="btn btn-link"><i class="icon-twitter4"></i></a>
+        </div>
+
+        <% if current_user.nil?  %>
+
+          <% if  request.subdomain.blank? || request.subdomain == "www" %>
+              <a href="/users/sign_up" class="signup-button">SIGN UP</a>
+          <% else %>
+              <a href="/users/sign_in" class="login-button">LOGIN</a>
+          <% end %>
+            
+            
+        <% else %>
+            Welcome <%=current_user.email%>
+            <%= link_to('Logout',destroy_user_session_path,:method=>:get)%>
+
+            <%= link_to('Manage Subscription',subscriptions_path)%>
+
+            <%= link_to('Invite User',new_user_invitation_path)%>
+        <% end %>
+
+
+       
+        
+      </div>
+    </div>
+    <div class="top-divider"></div>
+  </div>
+</div>            <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+                    <span class="icon-navicon"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/logo.png" data-dark-src="/frontend/assets/img/logo_dark.png" alt="Coco Frontend Template" class="logo">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/index" <%=@active=='index' ? 'class="active"' : ''%> >HOME</a></li>
+                    <li><a href="/about_us"  <%= @active=='aboutus' ? 'class="active"' : ''%>  >ABOUT</a></li>
+                    <li><a href="/services"  <%= @active=='services' ? 'class="active"' : '' %>  >SERVICES</a></li>
+                    <li><a href="/portfolio" <%= @active=='portfolio' ? 'class="active"' : '' %>   >PORTFOLIO</a></li>
+                    <li><a href="/contact"  <%= @active=='contact' ? 'class="active"' : '' %>   >CONTACT</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-->
+    </nav>        <section class="main-slider fullsize" data-stellar-background-ratio="0.5" style="background-image: url(images/headers/index.jpg)">
+  <div class="slider-caption">
+    <h1 data-animate="fadeInDown" data-delay="1000" data-duration="2s">Whenever you feel lost, <br>we are here to guide you!</h1>
+        <a data-animate="fadeInUp" data-duration="2s" data-delay="1300" href="javascript:;" class="btn btn-primary btn-lg">CONTACT US</a> </div>
+</section>    </header>
