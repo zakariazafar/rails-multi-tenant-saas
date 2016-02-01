@@ -1,6 +1,12 @@
 class HomeController < ApplicationController
 	def index
+    if user_signed_in?
+    @template_part = "dashboard"
+    render 'dashboard'
+    else
 		@active = "index"
+    render 'index'
+    end
 	end
 
   def aboutus
